@@ -6,7 +6,7 @@ import { withStyles } from '@mui/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import navbarStyles from "./styles/NavbarStyles";
 
-const NavBar = ({ classes }) =>
+const NavBar = ({ toggleTheme, classes }) =>
     <div className={classes.root}>
         <AppBar position="static" color="primary">
             <Toolbar>
@@ -16,7 +16,7 @@ const NavBar = ({ classes }) =>
                 <Typography className={classes.title} variant="h6" color="inherit">
                     App Title
                 </Typography>
-                <Switch color={"error"}/>
+                <Switch color={"error"} onChange={toggleTheme} />
                 <div className={classes.grow} />
                 <div className={classes.search}>
                     <div className={classes.searchIcon}>
