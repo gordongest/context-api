@@ -24,7 +24,7 @@ const Form = ({ classes }) => {
     const [email, setEmail, resetEmail] = useInputState("");
     const [password, setPassword, resetPassword] = useInputState("");
     const { language, setLanguage } = useContext(LanguageContext);
-    const { signInWord, emailWord, passwordWord, rememberMeWord } = words[language];
+    const { signInText, emailText, passwordText, rememberMeText } = words[language];
 
     const handleClick = () => console.log("bing!");
 
@@ -38,22 +38,22 @@ const Form = ({ classes }) => {
                 <Avatar className={classes.avatar}>
                     <LockOutlined />
                 </Avatar>
-                <Typography variant="h5">{signInWord}</Typography>
-                <Select value={language} onChange={handleChange}>
-                    <MenuItem value="english">English</MenuItem>
-                    <MenuItem value="french">French</MenuItem>
-                    <MenuItem value="spanish">Spanish</MenuItem>
+                <Typography variant="h5">{signInText}</Typography>
+                <Select className={classes.select} value={language} onChange={handleChange}>
+                    <MenuItem value="english">{words[language].languageText.english}</MenuItem>
+                    <MenuItem value="french">{words[language].languageText.french}</MenuItem>
+                    <MenuItem value="spanish">{words[language].languageText.spanish}</MenuItem>
                 </Select>
                 <form className={classes.form}>
                     <FormControl margin="normal" required fullWidth>
-                        <InputLabel htmlFor="email">{emailWord}</InputLabel>
+                        <InputLabel htmlFor="email">{emailText}</InputLabel>
                         <Input value={email} onChange={setEmail} id="email" name="email" autoFocus />
                     </FormControl>
                     <FormControl margin="normal" required fullWidth>
-                        <InputLabel htmlFor="password">{passwordWord}</InputLabel>
+                        <InputLabel htmlFor="password">{passwordText}</InputLabel>
                         <Input value={password} onChange={setPassword} type="password" id="password" name="password" />
                     </FormControl>
-                    <FormControlLabel control={<Checkbox color="primary" />} label={rememberMeWord} />
+                    <FormControlLabel control={<Checkbox color="primary" />} label={rememberMeText} />
                     <Button
                         className={classes.submit}
                         variant="contained"
@@ -62,7 +62,7 @@ const Form = ({ classes }) => {
                         fullWidth
                         onClick={handleClick}
                     >
-                        {signInWord}
+                        {signInText}
                     </Button>
                 </form>
             </Paper>

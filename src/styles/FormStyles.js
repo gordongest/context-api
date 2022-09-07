@@ -24,6 +24,9 @@ const formStyles = (theme) => ({
         margin: theme.spacing(1),
         backgroundColor: theme.palette.secondary.main,
     },
+    select: {
+      marginTop: theme.spacing(3)
+    },
     form: {
         width: "100%",
         marginTop: theme.spacing(3),

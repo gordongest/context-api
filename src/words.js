@@ -1,20 +1,41 @@
 export const words = {
     english: {
-        signInWord: "Sign In",
-        emailWord: "Email",
-        passwordWord: "Password",
-        rememberMeWord: "Remember Me"
+        signInText: "Sign In",
+        emailText: "Email",
+        passwordText: "Password",
+        rememberMeText: "Remember Me",
+        searchText: "Search",
+        languageText: {
+            english: "English",
+            french: "French",
+            spanish: "Spanish"
+        },
+        emoji: "🇺🇸"
     },
     french: {
-        signInWord: "Se connecter",
-        emailWord: "Addresse électronique",
-        passwordWord: "Mot de passe",
-        rememberMeWord: "Souviens-toi de moi"
+        signInText: "Se connecter",
+        emailText: "Addresse électronique",
+        passwordText: "Mot de passe",
+        rememberMeText: "Souviens-toi de moi",
+        searchText: "Chercher",
+        languageText: {
+            english: "Anglais",
+            french: "Français",
+            spanish: "Espagnol"
+        },
+        emoji: "🇫🇷"
     },
     spanish: {
-        signInWord: "Registrarse",
-        emailWord: "Correo electrónico",
-        passwordWord: "Contraseña",
-        rememberMeWord: "Recuérdame"
+        signInText: "Registrarse",
+        emailText: "Correo electrónico",
+        passwordText: "Contraseña",
+        rememberMeText: "Recuérdame",
+        searchText: "Buscar",
+        languageText: {
+            english: "Inglés",
+            french: "Francés",
+            spanish: "Español"
+        },
+        emoji: "🇪🇸"
     }
 }

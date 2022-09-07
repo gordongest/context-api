@@ -5,17 +5,20 @@ import {
 import { withStyles } from '@mui/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import { ThemeContext } from "./contexts/Theme.Context";
+import { LanguageContext } from "./contexts/Language.Context";
+import { words } from './words';
 import navbarStyles from "./styles/NavbarStyles";
 
 const NavBar = ({ classes }) => {
     const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
+    const { language, setLanguage } = useContext(LanguageContext);
 
     return (
         <div className={classes.root}>
             <AppBar position="static" color={isDarkTheme ? "default" : "primary"}>
                 <Toolbar>
                     <IconButton className={classes.menuButton} color="inherit">
-                        <span>🇫🇷</span>
+                        <span>{words[language].emoji}</span>
                     </IconButton>
                     <Typography className={classes.title} variant="h6" color="inherit">
                         App Title
@@ -27,7 +30,7 @@ const NavBar = ({ classes }) => {
                             <SearchIcon />
                         </div>
                         <InputBase
-                            placeholder="search..."
+                            placeholder={`${words[language].searchText}...`}
                             classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput
