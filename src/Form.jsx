@@ -25,7 +25,12 @@ const Form = ({ classes }) => {
     const { language, changeLanguage } = useContext(LanguageContext);
     const { signInText, emailText, passwordText, rememberMeText, languageText } = words[language];
 
-    const handleClick = () => console.log("bing!");
+    const handleClick = e => {
+        e.preventDefault();
+        console.log("bing!");
+        resetEmail();
+        resetPassword();
+    }
 
     return (
         <main className={classes.main}>

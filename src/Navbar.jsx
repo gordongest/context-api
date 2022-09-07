@@ -10,8 +10,8 @@ import { words } from './words';
 import navbarStyles from "./styles/NavbarStyles";
 
 const NavBar = ({ classes }) => {
-    const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
-    const { language, setLanguage } = useContext(LanguageContext);
+    const { isDarkTheme, toggleDarkTheme } = useContext(ThemeContext);
+    const { language } = useContext(LanguageContext);
     const { emoji, searchText } = words[language];
 
     return (
@@ -24,7 +24,7 @@ const NavBar = ({ classes }) => {
                     <Typography className={classes.title} variant="h6" color="inherit">
                         App Title
                     </Typography>
-                    <Switch onChange={toggleTheme} />
+                    <Switch onChange={toggleDarkTheme} />
                     <div className={classes.grow} />
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>

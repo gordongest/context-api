@@ -13,10 +13,10 @@ const themes = {
 const ThemeContext = createContext(themes.dark);
 
 const ThemeContextProvider = ({ children }) => {
-    const [isDarkTheme, toggleTheme] = useToggleState(false);
+    const [isDarkTheme, toggleDarkTheme] = useToggleState(false);
 
     return (
-        <ThemeContext.Provider value={{ isDarkTheme, toggleTheme }}>
+        <ThemeContext.Provider value={{ isDarkTheme, toggleDarkTheme }}>
             {children}
         </ThemeContext.Provider>
     )
