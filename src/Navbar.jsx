@@ -12,13 +12,14 @@ import navbarStyles from "./styles/NavbarStyles";
 const NavBar = ({ classes }) => {
     const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
     const { language, setLanguage } = useContext(LanguageContext);
+    const { emoji, searchText } = words[language];
 
     return (
         <div className={classes.root}>
             <AppBar position="static" color={isDarkTheme ? "default" : "primary"}>
                 <Toolbar>
                     <IconButton className={classes.menuButton} color="inherit">
-                        <span>{words[language].emoji}</span>
+                        <span>{emoji}</span>
                     </IconButton>
                     <Typography className={classes.title} variant="h6" color="inherit">
                         App Title
@@ -30,7 +31,7 @@ const NavBar = ({ classes }) => {
                             <SearchIcon />
                         </div>
                         <InputBase
-                            placeholder={`${words[language].searchText}...`}
+                            placeholder={`${searchText}...`}
                             classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput

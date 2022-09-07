@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import {
   Avatar,
   Button,
-  CssBaseline,
   FormControl,
   FormControlLabel,
   Checkbox,
@@ -23,14 +22,10 @@ import formStyles from "./styles/FormStyles";
 const Form = ({ classes }) => {
     const [email, setEmail, resetEmail] = useInputState("");
     const [password, setPassword, resetPassword] = useInputState("");
-    const { language, setLanguage } = useContext(LanguageContext);
-    const { signInText, emailText, passwordText, rememberMeText } = words[language];
+    const { language, changeLanguage } = useContext(LanguageContext);
+    const { signInText, emailText, passwordText, rememberMeText, languageText } = words[language];
 
     const handleClick = () => console.log("bing!");
-
-    const handleChange = (e) => {
-        setLanguage(e.target.value);
-    }
 
     return (
         <main className={classes.main}>
@@ -39,10 +34,10 @@ const Form = ({ classes }) => {
                     <LockOutlined />
                 </Avatar>
                 <Typography variant="h5">{signInText}</Typography>
-                <Select className={classes.select} value={language} onChange={handleChange}>
-                    <MenuItem value="english">{words[language].languageText.english}</MenuItem>
-                    <MenuItem value="french">{words[language].languageText.french}</MenuItem>
-                    <MenuItem value="spanish">{words[language].languageText.spanish}</MenuItem>
+                <Select className={classes.select} value={language} onChange={changeLanguage}>
+                    <MenuItem value="english">{languageText.english}</MenuItem>
+                    <MenuItem value="french">{languageText.french}</MenuItem>
+                    <MenuItem value="spanish">{languageText.spanish}</MenuItem>
                 </Select>
                 <form className={classes.form}>
                     <FormControl margin="normal" required fullWidth>

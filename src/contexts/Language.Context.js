@@ -4,9 +4,10 @@ const LanguageContext = createContext();
 
 const LanguageContextProvider = ({ children }) => {
     const [language, setLanguage] = useState("english");
+    const changeLanguage = e => setLanguage(e.target.value);
 
     return (
-        <LanguageContext.Provider value={{ language, setLanguage }}>
+        <LanguageContext.Provider value={{ language, changeLanguage }}>
             {children}
         </LanguageContext.Provider>
     )
