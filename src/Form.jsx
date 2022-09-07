@@ -17,35 +17,14 @@ import { LockOutlined } from "@mui/icons-material";
 import { withStyles } from "@mui/styles";
 import { LanguageContext } from "./contexts/Language.Context";
 import useInputState from "./hooks/useInputState";
+import { words } from './words';
 import formStyles from "./styles/FormStyles";
 
-const words = {
-    english: {
-        signInWord: "Sign In",
-        emailWord: "Email",
-        passwordWord: "Password",
-        rememberMeWord: "Remember Me"
-    },
-    french: {
-        signInWord: "Se connecter",
-        emailWord: "Addresse électronique",
-        passwordWord: "Mot de passe",
-        rememberMeWord: "Souviens-toi de moi"
-    },
-    spanish: {
-        signInWord: "Registrarse",
-        emailWord: "Correo electrónico",
-        passwordWord: "Contraseña",
-        rememberMeWord: "Recuérdame"
-    }
-}
-
 const Form = ({ classes }) => {
-    const { language, setLanguage } = useContext(LanguageContext);
     const [email, setEmail, resetEmail] = useInputState("");
     const [password, setPassword, resetPassword] = useInputState("");
+    const { language, setLanguage } = useContext(LanguageContext);
     const { signInWord, emailWord, passwordWord, rememberMeWord } = words[language];
-
 
     const handleClick = () => console.log("bing!");
 
